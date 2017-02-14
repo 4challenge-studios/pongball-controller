@@ -1,0 +1,6 @@
+framework module Pods_pongball_controller {
+  umbrella header "Pods-pongball-controller-umbrella.h"
+
+  export *
+  module * { export * }
+}
