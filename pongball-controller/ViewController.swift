@@ -19,9 +19,13 @@ class ViewController: UIViewController, MultiPeerDelegate {
     //Se playPause = true voltar o jogo, playPause = false pausa o jogo
     var playPause: Bool = false
     
-    
     func conectado(nome: String) {
-        self.conectado.text = nome
+        
+        DispatchQueue.main.async {
+            self.conectado.text = nome
+        }
+        
+        
     }
     
     override func viewDidLoad() {
@@ -33,6 +37,7 @@ class ViewController: UIViewController, MultiPeerDelegate {
     @IBAction func chute(_ sender: UIButton) {
         enviaMensagem(comando: "kick")
         print("kick")
+        
     }
     
     @IBAction func direita(_ sender: UIButton) {

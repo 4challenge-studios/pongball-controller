@@ -12,7 +12,7 @@ class MultiPeer: NSObject {
     var peer = MCPeerID.init(displayName: UIDevice.current.name)
     let serviceTypePadrao = "pong"
     var advertiser: MCNearbyServiceAdvertiser
-    
+    var displayNameMaster: String?
     
     var delegate: MultiPeerDelegate?
     
@@ -55,8 +55,14 @@ extension MultiPeer: MCSessionDelegate {
         
         switch state {
         case .connected:
-            print("Conectou \(peerID.displayName)")
-            self.delegate?.conectado(nome: peerID.displayName)
+            guard let _ = self.displayNameMaster else {
+                self.displayNameMaster = peerID.displayName
+                print("Conectou \(self.displayNameMaster)")
+                self.delegate?.conectado(nome: self.displayNameMaster!)
+                return
+            }
+            
+            
         case .connecting:
             print("Conectando \(peerID.displayName)")
         case .notConnected:
