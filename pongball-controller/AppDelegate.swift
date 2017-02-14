@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  pongball-controller
+//  PongControle
 //
-//  Created by Matheus Martins on 2/9/17.
-//  Copyright © 2017 matheusmcardoso. All rights reserved.
+//  Created by Samuel Honorato on 09/02/17.
+//  Copyright © 2017 Samuel Honorato. All rights reserved.
 //
 
 import UIKit
@@ -12,10 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var multipeer: MultiPeer?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.multipeer = MultiPeer()
         return true
     }
 
