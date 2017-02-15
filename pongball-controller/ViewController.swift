@@ -24,8 +24,6 @@ class ViewController: UIViewController, MultiPeerDelegate {
         DispatchQueue.main.async {
             self.conectado.text = nome
         }
-        
-        
     }
     
     override func viewDidLoad() {
@@ -76,10 +74,13 @@ class ViewController: UIViewController, MultiPeerDelegate {
     
     func enviaMensagem(comando: String) {
         let sessao = appDelegate.multipeer!.session
-        do {
-            try sessao.send(comando.data(using: .utf8, allowLossyConversion: false)!, toPeers: sessao.connectedPeers, with: .reliable)
-        }catch _ {
-            
+        DispatchQueue.main.async {
+            do {
+                try sessao.send(comando.data(using: .utf8, allowLossyConversion: false)!, toPeers: sessao.connectedPeers, with: .reliable)
+                
+            }catch _ {
+                
+            }
         }
     }
     
