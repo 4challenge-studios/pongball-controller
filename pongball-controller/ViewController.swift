@@ -18,7 +18,16 @@ class ViewController: UIViewController, MultiPeerDelegate {
     
     //Se playPause = true voltar o jogo, playPause = false pausa o jogo
     var playPause: Bool = false
+    var cor: String?
     
+    @IBOutlet weak var kickImageView: UIImageView!
+    @IBOutlet weak var rightImageView: UIImageView!
+    @IBOutlet weak var leftImageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var kickOutlet: UIButton!
+    @IBOutlet weak var rightOutlet: UIButton!
+    @IBOutlet weak var leftOutlet: UIButton!
     func conectado(nome: String) {
         
         DispatchQueue.main.async {
@@ -31,31 +40,50 @@ class ViewController: UIViewController, MultiPeerDelegate {
 
         appDelegate.multipeer?.delegate = self
     }
+    
+    func mudarCor(cor: String) {
+        DispatchQueue.main.async {
+            self.imageView.image = UIImage.init(named: "control_\(cor)")
+            self.kickImageView.image = UIImage.init(named: "kick_\(cor)_up")
+            self.rightImageView.image = UIImage.init(named: "right_\(cor)_up")
+            self.leftImageView.image = UIImage.init(named: "left_\(cor)_up")
+            self.cor = cor
+        }
+    }
 
     @IBAction func chute(_ sender: UIButton) {
         enviaMensagem(comando: "kick")
-        print("kick")
         
+        kickImageView.image = UIImage.init(named: "kick_\(cor!)_up")
     }
+    
+    
+    @IBAction func chuteDown(_ sender: UIButton) {
+        kickImageView.image = UIImage.init(named: "kick_\(cor!)_down")
+    }
+    
     
     @IBAction func direita(_ sender: UIButton) {
         enviaMensagem(comando: "rightUp")
-        print("rightUp")
+        rightImageView.image = UIImage.init(named: "right_\(cor!)_up")
     }
     
     @IBAction func direitaTouchDown(_ sender: UIButton) {
         enviaMensagem(comando: "rightDown")
-        print("rightDown")
+        rightImageView.image = UIImage.init(named: "right_\(cor!)_down")
+        
     }
     
     @IBAction func esquerda(_ sender: UIButton) {
         enviaMensagem(comando: "leftUp")
-        print("leftUp")
+        leftImageView.image = UIImage.init(named: "left_\(cor!)_up")
     }
     
     @IBAction func leftTouchDown(_ sender: Any) {
         enviaMensagem(comando: "leftDown")
-        print("leftDown")
+        
+        leftImageView.image = UIImage.init(named: "left_\(cor!)_down")
+        
     }
     
     @IBAction func playpause(_ sender: UIButton) {

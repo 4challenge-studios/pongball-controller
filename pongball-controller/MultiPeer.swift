@@ -5,6 +5,7 @@ import MultipeerConnectivity
 
 protocol MultiPeerDelegate {
     func conectado(nome: String)
+    func mudarCor(cor: String)
 }
 
 class MultiPeer: NSObject {
@@ -49,6 +50,9 @@ extension MultiPeer: MCNearbyServiceAdvertiserDelegate {
 extension MultiPeer: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         
+        let cor = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as! String
+        
+        self.delegate?.mudarCor(cor: cor)
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
