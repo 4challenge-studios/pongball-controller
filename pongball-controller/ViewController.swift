@@ -18,7 +18,7 @@ class ViewController: UIViewController, MultiPeerDelegate {
     
     //Se playPause = true voltar o jogo, playPause = false pausa o jogo
     var playPause: Bool = false
-    var cor: String?
+    var cor: String = "black"
     
     @IBOutlet weak var kickImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
@@ -54,35 +54,35 @@ class ViewController: UIViewController, MultiPeerDelegate {
     @IBAction func chute(_ sender: UIButton) {
         enviaMensagem(comando: "kick")
         
-        kickImageView.image = UIImage.init(named: "kick_\(cor!)_up")
+        kickImageView.image = UIImage.init(named: "kick_\(cor)_up")
     }
     
     
     @IBAction func chuteDown(_ sender: UIButton) {
-        kickImageView.image = UIImage.init(named: "kick_\(cor!)_down")
+        kickImageView.image = UIImage.init(named: "kick_\(cor)_down")
     }
     
     
     @IBAction func direita(_ sender: UIButton) {
         enviaMensagem(comando: "rightUp")
-        rightImageView.image = UIImage.init(named: "right_\(cor!)_up")
+        rightImageView.image = UIImage.init(named: "right_\(cor)_up")
     }
     
     @IBAction func direitaTouchDown(_ sender: UIButton) {
         enviaMensagem(comando: "rightDown")
-        rightImageView.image = UIImage.init(named: "right_\(cor!)_down")
+        rightImageView.image = UIImage.init(named: "right_\(cor)_down")
         
     }
     
     @IBAction func esquerda(_ sender: UIButton) {
         enviaMensagem(comando: "leftUp")
-        leftImageView.image = UIImage.init(named: "left_\(cor!)_up")
+        leftImageView.image = UIImage.init(named: "left_\(cor)_up")
     }
     
     @IBAction func leftTouchDown(_ sender: Any) {
         enviaMensagem(comando: "leftDown")
         
-        leftImageView.image = UIImage.init(named: "left_\(cor!)_down")
+        leftImageView.image = UIImage.init(named: "left_\(cor)_down")
         
     }
     
