@@ -52,13 +52,12 @@ class ViewController: UIViewController, MultiPeerDelegate {
     }
 
     @IBAction func chute(_ sender: UIButton) {
-        enviaMensagem(comando: "kick")
-        
         kickImageView.image = UIImage.init(named: "kick_\(cor)_up")
     }
     
     
     @IBAction func chuteDown(_ sender: UIButton) {
+        enviaMensagem(comando: "kick")
         kickImageView.image = UIImage.init(named: "kick_\(cor)_down")
     }
     
@@ -103,9 +102,13 @@ class ViewController: UIViewController, MultiPeerDelegate {
     func enviaMensagem(comando: String) {
         let sessao = appDelegate.multipeer!.session
         
+        guard let master = self.appDelegate.multipeer?.displayNameMaster else {
+            return
+        }
+        
         DispatchQueue.main.async {
             do {
-                try sessao.send(comando.data(using: .utf8, allowLossyConversion: false)!, toPeers: sessao.connectedPeers, with: .reliable)
+                try sessao.send(comando.data(using: .utf8, allowLossyConversion: false)!, toPeers: [master], with: .reliable)
             }catch _ {
                 
             }

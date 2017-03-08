@@ -38,9 +38,14 @@ class MultiPeer: NSObject {
 
 extension MultiPeer: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-        print("recebi convite")
         
-        invitationHandler(true, session)
+        
+        //guard let _ = self.displayNameMaster else {
+            invitationHandler(true, session)
+        //    return
+        //}
+        
+        
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) { }
@@ -69,6 +74,7 @@ extension MultiPeer: MCSessionDelegate {
             
         case .connecting:
             print("Conectando \(peerID.displayName)")
+            
         case .notConnected:
             print("Desconectou \(peerID.displayName)")
             if self.displayNameMaster != nil {
@@ -76,9 +82,7 @@ extension MultiPeer: MCSessionDelegate {
                 self.delegate?.mudarCor(cor: "black")
                 self.displayNameMaster = nil
             }
-            
         }
-        
     }
     
     func session(_ session: MCSession, didReceiveCertificate certificate: [Any]?, fromPeer peerID: MCPeerID, certificateHandler: @escaping (Bool) -> Void) {
@@ -96,21 +100,3 @@ extension MultiPeer: MCSessionDelegate {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
