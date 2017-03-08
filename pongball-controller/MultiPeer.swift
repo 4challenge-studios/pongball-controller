@@ -40,10 +40,10 @@ extension MultiPeer: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         
         
-        //guard let _ = self.displayNameMaster else {
+        guard let _ = self.displayNameMaster else {
             invitationHandler(true, session)
-        //    return
-        //}
+            return
+        }
         
         
     }
