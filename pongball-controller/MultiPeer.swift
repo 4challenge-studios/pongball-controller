@@ -78,6 +78,7 @@ extension MultiPeer: MCSessionDelegate {
         case .notConnected:
             print("Desconectou \(peerID.displayName)")
             if self.displayNameMaster != nil {
+                self.session.disconnect()
                 self.delegate?.conectado(nome: "Disconnected")
                 self.delegate?.mudarCor(cor: "black")
                 self.displayNameMaster = nil
