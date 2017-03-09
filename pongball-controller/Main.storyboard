@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,13 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="control_black" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-yN-uH4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="control_black" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-yN-uH4">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIs-2J-JHR">
-                                <rect key="frame" x="0.0" y="-1" width="134" height="322"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIs-2J-JHR">
+                                <rect key="frame" x="0.0" y="0.0" width="142" height="320"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -37,9 +36,8 @@
                                     <action selector="leftTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qJH-6L-pQG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7w-z9-Rhj">
-                                <rect key="frame" x="134" y="0.0" width="134" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7w-z9-Rhj">
+                                <rect key="frame" x="132" y="0.0" width="142" height="320"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -49,20 +47,8 @@
                                     <action selector="direitaTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="OeE-eD-nFX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Disconnected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZd-yf-UAT">
-                                <rect key="frame" x="211" y="296" width="142" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="label-pongBash" translatesAutoresizingMaskIntoConstraints="NO" id="WlJ-Zn-xv8">
-                                <rect key="frame" x="193" y="64" width="182" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abI-7h-8eV">
-                                <rect key="frame" x="312" y="-1" width="256" height="321"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abI-7h-8eV">
+                                <rect key="frame" x="344.5" y="0.0" width="227" height="320"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -72,20 +58,62 @@
                                     <action selector="chuteExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="OTe-vQ-Rjc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_up_black" translatesAutoresizingMaskIntoConstraints="NO" id="IoU-HI-gSR">
-                                <rect key="frame" x="26" y="112" width="101" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_up_black" translatesAutoresizingMaskIntoConstraints="NO" id="IoU-HI-gSR">
+                                <rect key="frame" x="-213" y="108.5" width="568" height="120"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="right_up_black" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-p5-k1L">
-                                <rect key="frame" x="142" y="112" width="101" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_up_black" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-p5-k1L">
+                                <rect key="frame" x="-103" y="108.5" width="598" height="120"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kick_up_black" translatesAutoresizingMaskIntoConstraints="NO" id="1Mv-IO-6B7">
-                                <rect key="frame" x="377" y="98" width="125" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kick_up_black" translatesAutoresizingMaskIntoConstraints="NO" id="1Mv-IO-6B7">
+                                <rect key="frame" x="160" y="108.5" width="568" height="120"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="label-pongBash" translatesAutoresizingMaskIntoConstraints="NO" id="WlJ-Zn-xv8">
+                                <rect key="frame" x="213" y="50.5" width="142" height="35.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZd-yf-UAT">
+                                <rect key="frame" x="237.5" y="296" width="93" height="17.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WlJ-Zn-xv8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:2.35" id="07F-08-5Ty"/>
+                            <constraint firstItem="l7w-z9-Rhj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:1.4" id="0Ee-az-qpK"/>
+                            <constraint firstItem="1Mv-IO-6B7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:0.64" id="1EH-l1-JCs"/>
+                            <constraint firstItem="l7w-z9-Rhj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1dE-45-qIH"/>
+                            <constraint firstItem="IoU-HI-gSR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:4" id="1x7-Xk-lkK"/>
+                            <constraint firstItem="KZd-yf-UAT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2gp-vc-5YJ"/>
+                            <constraint firstItem="ADc-p5-k1L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:1.45" id="3hr-i1-qcV"/>
+                            <constraint firstItem="KZd-yf-UAT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:0.525" id="3qA-lg-ggs"/>
+                            <constraint firstItem="abI-7h-8eV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2.5" id="4qu-h6-EEJ"/>
+                            <constraint firstItem="fIs-2J-JHR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="BDy-k9-b3C"/>
+                            <constraint firstItem="abI-7h-8eV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="C9D-Vp-SAs"/>
+                            <constraint firstItem="WlJ-Zn-xv8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="HxH-bV-fre"/>
+                            <constraint firstItem="1Mv-IO-6B7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:0.95" id="Q65-XF-2J3"/>
+                            <constraint firstItem="ADc-p5-k1L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:0.95" id="U5e-CA-9Jz"/>
+                            <constraint firstItem="abI-7h-8eV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:0.62" id="V0N-St-wBr"/>
+                            <constraint firstItem="l7w-z9-Rhj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="XOm-kR-EAY"/>
+                            <constraint firstItem="ADc-p5-k1L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2.66" id="Ydn-As-xmU"/>
+                            <constraint firstItem="WlJ-Zn-xv8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:9" id="aQQ-UV-KaH"/>
+                            <constraint firstItem="bNq-yN-uH4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bNu-sB-0vx"/>
+                            <constraint firstItem="abI-7h-8eV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="csC-ck-2cV"/>
+                            <constraint firstItem="bNq-yN-uH4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dad-i2-VPf"/>
+                            <constraint firstItem="bNq-yN-uH4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gjH-L8-Zlj"/>
+                            <constraint firstItem="IoU-HI-gSR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iFh-KU-qzg"/>
+                            <constraint firstItem="bNq-yN-uH4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mBg-B7-349"/>
+                            <constraint firstItem="l7w-z9-Rhj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:4" id="ocX-tT-2bS"/>
+                            <constraint firstItem="IoU-HI-gSR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2.66" id="oi4-tO-F3x"/>
+                            <constraint firstItem="fIs-2J-JHR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:4" id="r7G-HB-NR1"/>
+                            <constraint firstItem="fIs-2J-JHR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s5U-MJ-foP"/>
+                            <constraint firstItem="ADc-p5-k1L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:0.95" id="uCt-wF-AtT"/>
+                            <constraint firstItem="1Mv-IO-6B7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="utv-wL-huY"/>
+                            <constraint firstItem="WlJ-Zn-xv8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wUj-dv-Fwk"/>
+                            <constraint firstItem="IoU-HI-gSR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:0.95" id="wnr-Fa-8nH"/>
+                            <constraint firstItem="fIs-2J-JHR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="xI1-De-2Gy"/>
+                            <constraint firstItem="1Mv-IO-6B7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2.66" id="xpF-kx-L2E"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="conectado" destination="KZd-yf-UAT" id="N83-RI-Vwl"/>
