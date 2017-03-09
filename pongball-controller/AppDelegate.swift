@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let m = multipeer {
             DispatchQueue.main.async {
-                m.delegate?.mudarCor(cor: "black")
-                m.delegate?.conectado(nome: "Disconnected")
+                m.delegate?.changeColor(color: Colors.black)
+                m.delegate?.connected(name: "Disconnected")
                 m.session.disconnect()
             }
         }

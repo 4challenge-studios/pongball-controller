@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0D74E61E71821600C77125 /* StateButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D74E51E71821600C77125 /* StateButtonEnum.swift */; };
+		6A0D74E91E71826C00C77125 /* ColorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D74E81E71826C00C77125 /* ColorsEnum.swift */; };
 		6A4F80371E532CCA00E425F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F80331E532CCA00E425F0 /* AppDelegate.swift */; };
 		6A4F80381E532CCA00E425F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F80341E532CCA00E425F0 /* ViewController.swift */; };
 		6A4F80391E532CCA00E425F0 /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F80351E532CCA00E425F0 /* MultiPeer.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		2B6E5E9B9FC2B461F37C8981 /* Pods_pongball_controller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pongball_controller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0D74E51E71821600C77125 /* StateButtonEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateButtonEnum.swift; sourceTree = "<group>"; };
+		6A0D74E81E71826C00C77125 /* ColorsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsEnum.swift; sourceTree = "<group>"; };
 		6A4F80331E532CCA00E425F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A4F80341E532CCA00E425F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6A4F80351E532CCA00E425F0 /* MultiPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
@@ -48,6 +52,15 @@
 				2B6E5E9B9FC2B461F37C8981 /* Pods_pongball_controller.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A0D74E71E71825000C77125 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				6A0D74E51E71821600C77125 /* StateButtonEnum.swift */,
+				6A0D74E81E71826C00C77125 /* ColorsEnum.swift */,
+			);
+			name = enum;
 			sourceTree = "<group>";
 		};
 		C72E0A5E67A60E7C7ECEAB88 /* Pods */ = {
@@ -84,6 +97,7 @@
 				6A4F80331E532CCA00E425F0 /* AppDelegate.swift */,
 				6A4F80341E532CCA00E425F0 /* ViewController.swift */,
 				6A4F80351E532CCA00E425F0 /* MultiPeer.swift */,
+				6A0D74E71E71825000C77125 /* enum */,
 				6A4F80361E532CCA00E425F0 /* Main.storyboard */,
 				D1E837731E4CA770001CED69 /* LaunchScreen.storyboard */,
 				D1E837761E4CA770001CED69 /* Info.plist */,
@@ -216,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0D74E91E71826C00C77125 /* ColorsEnum.swift in Sources */,
 				6A4F80381E532CCA00E425F0 /* ViewController.swift in Sources */,
 				6A4F80371E532CCA00E425F0 /* AppDelegate.swift in Sources */,
+				6A0D74E61E71821600C77125 /* StateButtonEnum.swift in Sources */,
 				6A4F80391E532CCA00E425F0 /* MultiPeer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

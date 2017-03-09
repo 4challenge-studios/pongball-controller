@@ -4,8 +4,8 @@ import MultipeerConnectivity
 
 
 protocol MultiPeerDelegate {
-    func conectado(nome: String)
-    func mudarCor(cor: String)
+    func connected(name: String)
+    func changeColor(color: Colors)
 }
 
 class MultiPeer: NSObject {
@@ -44,8 +44,6 @@ extension MultiPeer: MCNearbyServiceAdvertiserDelegate {
             invitationHandler(true, session)
             return
         }
-        
-        
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) { }
@@ -55,9 +53,11 @@ extension MultiPeer: MCNearbyServiceAdvertiserDelegate {
 extension MultiPeer: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         
-        let cor = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as! String
+        let messege = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as! String
+        if let color = Colors(rawValue: messege) {
+            self.delegate?.changeColor(color: color)
+        }
         
-        self.delegate?.mudarCor(cor: cor)
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -67,7 +67,7 @@ extension MultiPeer: MCSessionDelegate {
             guard let _ = self.displayNameMaster else {
                 self.displayNameMaster = peerID
                 print("Conectou \(self.displayNameMaster?.displayName)")
-                self.delegate?.conectado(nome: self.displayNameMaster!.displayName)
+                self.delegate?.connected(name: self.displayNameMaster!.displayName)
                 return
             }
             
@@ -79,8 +79,8 @@ extension MultiPeer: MCSessionDelegate {
             print("Desconectou \(peerID.displayName)")
             if self.displayNameMaster != nil {
                 self.session.disconnect()
-                self.delegate?.conectado(nome: "Disconnected")
-                self.delegate?.mudarCor(cor: "black")
+                self.delegate?.connected(name: "Disconnected")
+                self.delegate?.changeColor(color: .black)
                 self.displayNameMaster = nil
             }
         }

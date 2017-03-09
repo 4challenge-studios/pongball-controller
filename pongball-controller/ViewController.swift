@@ -16,7 +16,7 @@ class ViewController: UIViewController, MultiPeerDelegate {
     
     //Se playPause = true voltar o jogo, playPause = false pausa o jogo
     var playPause: Bool = false
-    var cor: String = "black"
+    var color: Colors = .black
     
     @IBOutlet weak var kickImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
@@ -27,9 +27,9 @@ class ViewController: UIViewController, MultiPeerDelegate {
     @IBOutlet weak var rightOutlet: UIButton!
     @IBOutlet weak var leftOutlet: UIButton!
     
-    func conectado(nome: String) {
+    func connected(name: String) {
         DispatchQueue.main.async {
-            self.conectado.text = nome
+            self.conectado.text = name
         }
     }
     
@@ -39,67 +39,106 @@ class ViewController: UIViewController, MultiPeerDelegate {
         appDelegate.multipeer?.delegate = self
     }
     
-    func mudarCor(cor: String) {
+    func changeColor(color: Colors) {
         DispatchQueue.main.async {
-            self.imageView.image = UIImage.init(named: "control_\(cor)")
-            self.kickImageView.image = UIImage.init(named: "kick_\(cor)_up")
-            self.rightImageView.image = UIImage.init(named: "right_\(cor)_up")
-            self.leftImageView.image = UIImage.init(named: "left_\(cor)_up")
-            self.cor = cor
+            self.imageView.image = UIImage.init(named: "control_\(color.rawValue)")
+            self.kickImageView.image = UIImage.init(named: "\(StateButton.kick.rawValue)_up_\(color.rawValue)")
+            self.rightImageView.image = UIImage.init(named: "\(StateButton.right_up.rawValue)_\(color.rawValue)")
+            self.leftImageView.image = UIImage.init(named: "\(StateButton.left_up.rawValue)_\(color.rawValue)")
+            self.color = color
         }
     }
 
     @IBAction func chute(_ sender: UIButton) {
-        kickImageView.image = UIImage.init(named: "kick_\(cor)_up")
+        let imageName = "\(StateButton.kick.rawValue)_up_\(color.rawValue)"
+        kickImageView.image = UIImage.init(named: imageName)
     }
+    
     @IBAction func chuteDown(_ sender: UIButton) {
-        enviaMensagem(comando: "kick")
-        kickImageView.image = UIImage.init(named: "kick_\(cor)_down")
+        let imageName = "\(StateButton.kick.rawValue)_down_\(color.rawValue)"
+        sendMessegeServer(message: .kick)
+        kickImageView.image = UIImage.init(named: imageName)
     }
     @IBAction func chuteExit(_ sender: UIButton) {
-        kickImageView.image = UIImage.init(named: "kick_\(cor)_up")
+        let imageName = "\(StateButton.kick.rawValue)_up_\(color.rawValue)"
+        kickImageView.image = UIImage.init(named: imageName)
     }
     
     
     @IBAction func direita(_ sender: UIButton) {
-        enviaMensagem(comando: "rightUp")
-        rightImageView.image = UIImage.init(named: "right_\(cor)_up")
+        let imageName = "\(StateButton.right_up.rawValue)_\(color.rawValue)"
+        sendMessegeServer(message: .right_up)
+        rightImageView.image = UIImage.init(named: imageName)
     }
     @IBAction func direitaTouchDown(_ sender: UIButton) {
-        enviaMensagem(comando: "rightDown")
-        rightImageView.image = UIImage.init(named: "right_\(cor)_down")
+        let imageName = "\(StateButton.right_down.rawValue)_\(color.rawValue)"
+        sendMessegeServer(message: .right_down)
+        rightImageView.image = UIImage.init(named: imageName)
     }
     @IBAction func direitaExit(_ sender: UIButton) {
-        enviaMensagem(comando: "rightUp")
-        rightImageView.image = UIImage.init(named: "right_\(cor)_up")
+        let imageName = "\(StateButton.right_up.rawValue)_\(color.rawValue)"
+        sendMessegeServer(message: .right_up)
+        rightImageView.image = UIImage.init(named: imageName)
     }
     
     
     @IBAction func esquerda(_ sender: UIButton) {
-        enviaMensagem(comando: "leftUp")
-        leftImageView.image = UIImage.init(named: "left_\(cor)_up")
+        let imageName = "\(StateButton.left_up.rawValue)_\(color.rawValue)"
+        sendMessegeServer(message: .left_up)
+        leftImageView.image = UIImage.init(named: imageName)
     }
     @IBAction func leftTouchDown(_ sender: Any) {
-        enviaMensagem(comando: "leftDown")
-        leftImageView.image = UIImage.init(named: "left_\(cor)_down")
+        let imageName = "\(StateButton.left_down.rawValue)_\(color.rawValue)"
+        sendMessegeServer(message: .left_down)
+        leftImageView.image = UIImage.init(named: imageName)
     }
     @IBAction func esquerdaExit(_ sender: UIButton) {
-        enviaMensagem(comando: "leftUp")
-        leftImageView.image = UIImage.init(named: "left_\(cor)_up")
+        let imageName = "\(StateButton.left_up.rawValue)_\(color.rawValue)"
+        sendMessegeServer(message: .left_up)
+        leftImageView.image = UIImage.init(named: imageName)
     }
     
     
-    func enviaMensagem(comando: String) {
+    func informationAlert(title: String, messege: String) {
+        let buttonName = "Ok"
+        let alert = UIAlertController.init(title: title, message: messege, preferredStyle: .alert)
+        let buttonOk = UIAlertAction.init(title: buttonName, style: .default, handler: {
+            action in
+            let imageName = "\(StateButton.kick.rawValue)_up_\(self.color.rawValue)"
+            self.kickImageView.image = UIImage.init(named: imageName)
+        })
+        
+        alert.addAction(buttonOk)
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func sendMessegeServer(message: StateButton) {
         let sessao = appDelegate.multipeer!.session
+        
         
         if let master = self.appDelegate.multipeer?.displayNameMaster {
             DispatchQueue.main.async {
                 do {
-                    try sessao.send(comando.data(using: .utf8, allowLossyConversion: false)!, toPeers: [master], with: .reliable)
+                    
+                    try sessao.send(message.rawValue.data(using: .utf8, allowLossyConversion: false)!, toPeers: [master], with: .reliable)
                 }catch _ {
                     
                 }
             }
+        }
+        
+        else {
+            switch message {
+                case .kick, .left_up, .right_up:
+                    let title = "Pong Bash not found"
+                    let message = "Download and run Pong Bash on the Apple TV for free!"
+                    informationAlert(title: title, messege: message)
+                default:
+                    print("Invalid")
+                }
         }
         
     }
