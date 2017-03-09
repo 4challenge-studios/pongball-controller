@@ -33,6 +33,7 @@
                                 </state>
                                 <connections>
                                     <action selector="esquerda:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IuW-jC-UQ8"/>
+                                    <action selector="esquerdaExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="zl6-Yr-ciz"/>
                                     <action selector="leftTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qJH-6L-pQG"/>
                                 </connections>
                             </button>
@@ -44,6 +45,7 @@
                                 </state>
                                 <connections>
                                     <action selector="direita:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2h8-oV-rg2"/>
+                                    <action selector="direitaExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="IrQ-tr-CiW"/>
                                     <action selector="direitaTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="OeE-eD-nFX"/>
                                 </connections>
                             </button>
@@ -54,17 +56,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRo-kX-4zb">
-                                <rect key="frame" x="276" y="213" width="83" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="play/pause">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playpause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tn0-4f-CGh"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="label-pongBash" translatesAutoresizingMaskIntoConstraints="NO" id="WlJ-Zn-xv8">
                                 <rect key="frame" x="193" y="64" width="182" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,8 +67,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="chute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oUY-3D-1he"/>
+                                    <action selector="chute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtR-v7-fmM"/>
                                     <action selector="chuteDown:" destination="BYZ-38-t0r" eventType="touchDown" id="dPZ-hu-Tdr"/>
+                                    <action selector="chuteExit:" destination="BYZ-38-t0r" eventType="touchDragExit" id="OTe-vQ-Rjc"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_black_up" translatesAutoresizingMaskIntoConstraints="NO" id="IoU-HI-gSR">
