@@ -27,7 +27,7 @@
 		6A4F80351E532CCA00E425F0 /* MultiPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
 		6A4F80361E532CCA00E425F0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A44D41279BC001FD61053635 /* Pods-pongball-controller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pongball-controller.release.xcconfig"; path = "Pods/Target Support Files/Pods-pongball-controller/Pods-pongball-controller.release.xcconfig"; sourceTree = "<group>"; };
-		D1E837671E4CA770001CED69 /* pongball-controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pongball-controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1E837671E4CA770001CED69 /* pongbash-controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pongbash-controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E837711E4CA770001CED69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1E837741E4CA770001CED69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1E837761E4CA770001CED69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		D1E837681E4CA770001CED69 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D1E837671E4CA770001CED69 /* pongball-controller.app */,
+				D1E837671E4CA770001CED69 /* pongbash-controller.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D1E837661E4CA76F001CED69 /* pongball-controller */ = {
+		D1E837661E4CA76F001CED69 /* pongbash-controller */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D1E837791E4CA770001CED69 /* Build configuration list for PBXNativeTarget "pongball-controller" */;
+			buildConfigurationList = D1E837791E4CA770001CED69 /* Build configuration list for PBXNativeTarget "pongbash-controller" */;
 			buildPhases = (
 				402E3B6A6B58426A2AB29655 /* [CP] Check Pods Manifest.lock */,
 				D1E837631E4CA76F001CED69 /* Sources */,
@@ -123,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = "pongball-controller";
+			name = "pongbash-controller";
 			productName = "pongball-controller";
-			productReference = D1E837671E4CA770001CED69 /* pongball-controller.app */;
+			productReference = D1E837671E4CA770001CED69 /* pongbash-controller.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D1E837621E4CA76F001CED69 /* Build configuration list for PBXProject "pongball-controller" */;
+			buildConfigurationList = D1E837621E4CA76F001CED69 /* Build configuration list for PBXProject "pongbash-controller" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -159,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D1E837661E4CA76F001CED69 /* pongball-controller */,
+				D1E837661E4CA76F001CED69 /* pongbash-controller */,
 			);
 		};
 /* End PBXProject section */
@@ -381,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D1E837621E4CA76F001CED69 /* Build configuration list for PBXProject "pongball-controller" */ = {
+		D1E837621E4CA76F001CED69 /* Build configuration list for PBXProject "pongbash-controller" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D1E837771E4CA770001CED69 /* Debug */,
@@ -390,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1E837791E4CA770001CED69 /* Build configuration list for PBXNativeTarget "pongball-controller" */ = {
+		D1E837791E4CA770001CED69 /* Build configuration list for PBXNativeTarget "pongbash-controller" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D1E8377A1E4CA770001CED69 /* Debug */,

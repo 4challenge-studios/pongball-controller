@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:pongball-controller.xcodeproj">
+      location = "group:/Users/matheusmartins/Desktop/Development/Repositories/pongball-controller/pongbash-controller.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
