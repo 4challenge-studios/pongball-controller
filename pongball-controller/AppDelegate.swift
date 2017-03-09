@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 m.delegate?.changeColor(color: Colors.black)
                 m.delegate?.connected(name: "Disconnected")
                 m.session.disconnect()
+                
             }
         }
     }
